@@ -32,6 +32,8 @@ public class loginHandler implements ActionListener {
     
     @Override
     public void actionPerformed(ActionEvent e) {
+        
+        
     Object click = e.getSource();
     if (click.equals(view.getBtnLogin())){
         orang o = model.getOrang(view.getUsername());
@@ -46,6 +48,7 @@ public class loginHandler implements ActionListener {
             else{ JOptionPane.showMessageDialog(view,"Password Salah");
             view.resetPw();}
         }
+       
         }
     else if (click.equals(view.getBtnBatal())) {
             view.dispose();
