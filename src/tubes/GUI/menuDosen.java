@@ -372,11 +372,31 @@ public class menuDosen extends javax.swing.JFrame {
        this.btnTambah4.addActionListener(e);
             
     }
+    
+    
+    public String getSelectKelas1() {
+        return listKelas1.getSelectedValue();
+    }
 
+    public String getSelectKelas2() {
+        return listKelas2.getSelectedValue();
+    }
+
+    public String getSelectKelas3() {
+        return listKelas3.getSelectedValue();
+    }
+
+    public String getSelecttMatkul() {
+        return listMatkul.getSelectedValue();
+    }
+
+    
+    
+    
     public JList<String> getListKelas1() {
         return listKelas1;
     }
-
+//bla.setListData
     public JList<String> getListKelas2() {
         return listKelas2;
     }
@@ -388,6 +408,8 @@ public class menuDosen extends javax.swing.JFrame {
     public JList<String> getListMatkul() {
         return listMatkul;
     }
+    
+    
 
     public String getTfKelas() {
         return tfKelas.getText();
