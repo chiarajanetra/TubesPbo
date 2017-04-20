@@ -49,6 +49,26 @@ public orang getOrang(String user){
             }
     return null;
 }
+public orang getUser(){
+    return this.user;
+}
+public void setUser(){
+    if (this.user instanceof mahasiswa) {
+        this.userM = (mahasiswa) this.user;
+    }
+    else {
+        this.userD = (dosen) this.user;
+    }
+}
+
+public boolean isAda(String nama){
+    for (orang o : person) {
+        if (o.getNama().equals(o))
+           this.setUser(getOrang(nama));
+         return true;
+        }
+    return false;
+}
 
     public orang getNIMMahasiswa(long nim){//getMahasiswaByNimTerdaftar
         for (orang o : person){

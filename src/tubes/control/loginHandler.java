@@ -36,20 +36,22 @@ public class loginHandler implements ActionListener {
         
     Object click = e.getSource();
     if (click.equals(view.getBtnLogin())){
-        orang o = model.getOrang(view.getUsername());
-        if (o == null){
-             JOptionPane.showMessageDialog(view,"User Tidak Ditemukan");
-             view.resetAll();
-        }
-        else if (o!= null){
-            if( o.getPw().equals(view.getPw())){    
-                view.dispose();
+          
+       
+        if (model.isAda(view.getName())){
+                if(model.getUser().getPw().equals(view.getPw())  ){
+                    view.dispose();
+                    //menu mhs/dosen
+                }
+                else{ JOptionPane.showMessageDialog(view,"Password Salah");
+                view.resetPw();}
             }
-            else{ JOptionPane.showMessageDialog(view,"Password Salah");
-            view.resetPw();}
-        }       
-        }
-    else if (click.equals(view.getBtnBatal())) {
+         else {
+            view.resetAll();
+            JOptionPane.showMessageDialog(view,"User Tidak Ditemukan");
+        } 
+    }
+       else if (click.equals(view.getBtnBatal())) {
             view.dispose();
             new menuHandler(model);
         }
@@ -57,6 +59,5 @@ public class loginHandler implements ActionListener {
             view.dispose();
             new daftarHandler(model);
         }
-    }
-    
+}
 }
