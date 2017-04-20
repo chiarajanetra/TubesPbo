@@ -6,6 +6,7 @@
 package tubes.GUI;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -191,12 +192,39 @@ public class menuMahasiswa extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnLogoutActionPerformed
 
+    
     public JButton getBtnEnroll() {
         return btnEnroll;
     }
 
     public JButton getBtnLogout() {
         return btnLogout;
+    }
+    
+
+    public JComboBox<String> getListDosen() {
+        return listDosen;
+    }
+
+    public JComboBox<String> getListKelas() {
+        return listKelas;
+    }
+
+    public JComboBox<String> getListKelas1() {
+        return listKelas1;
+    }
+    
+    
+    public String getSelectDosen() {
+        return (String) listDosen.getSelectedItem();
+    }
+
+    public String getSelectKelas() {
+        return (String) listKelas.getSelectedItem();
+    }
+
+    public String getSelectKelas1() {
+        return (String) listKelas1.getSelectedItem();
     }
 
     
