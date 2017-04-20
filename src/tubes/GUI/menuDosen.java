@@ -5,6 +5,10 @@
  */
 package tubes.GUI;
 
+import javax.swing.JButton;
+import javax.swing.JList;
+import javax.swing.JTextField;
+
 /**
  *
  * @author IDS CREW
@@ -333,6 +337,62 @@ public class menuDosen extends javax.swing.JFrame {
     private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRemoveActionPerformed
+
+    public JButton getBtnLogout() {
+        return btnLogout;
+    }
+
+    public JButton getBtnRemove() {
+        return btnRemove;
+    }
+
+    public JButton getBtnTambah1() {
+        return btnTambah1;
+    }
+
+    public JButton getBtnTambah2() {
+        return btnTambah2;
+    }
+
+    public JButton getBtnTambah3() {
+        return btnTambah3;
+    }
+
+    public JButton getBtnTambah4() {
+        return btnTambah4;
+    }
+
+    public JList<String> getListKelas1() {
+        return listKelas1;
+    }
+
+    public JList<String> getListKelas2() {
+        return listKelas2;
+    }
+
+    public JList<String> getListKelas3() {
+        return listKelas3;
+    }
+
+    public JList<String> getListMatkul() {
+        return listMatkul;
+    }
+
+    public String getTfKelas() {
+        return tfKelas.getText();
+    }
+
+    public Double getTfKuota() {
+        return Double.parseDouble(tfKuota.getText());
+    }
+
+    public JTextField getTfMatkul() {
+        return tfMatkul;
+    }
+
+    public String getTfNamaTugas() {
+        return tfNamaTugas.getText();
+    }
 
     /**
      * @param args the command line arguments
