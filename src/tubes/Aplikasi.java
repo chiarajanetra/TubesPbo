@@ -49,6 +49,7 @@ public orang getOrang(String user){
             }
     return null;
 }
+
     public orang getNIMMahasiswa(long nim){//getMahasiswaByNimTerdaftar
         for (orang o : person){
             if (o instanceof mahasiswa){
