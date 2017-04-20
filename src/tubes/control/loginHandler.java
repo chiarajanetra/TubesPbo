@@ -34,20 +34,18 @@ public class loginHandler implements ActionListener {
     public void actionPerformed(ActionEvent e) {
     Object click = e.getSource();
     if (click.equals(view.getBtnLogin())){
-        if (model.getOrang(view.getUsername()) != null){
-            user = model.getOrang(view.getUsername());
-            if (model.isCorrect(view.getPw())){
-                model.setUser(user);
-                JOptionPane.showMessageDialog(view, "Login Berhasil");
-            }
-            else{
-                 JOptionPane.showMessageDialog(view, "Password salah.");
-                 view.resetPw();
-            }
+        orang o = model.getOrang(view.getUsername());
+        if (o == null){
+             JOptionPane.showMessageDialog(view, click"User Tidak Ditemukan");
+             view.resetAll();
         }
+        else if (o!= null){
+            if( o.getPw().equals(view.getPw())){
+                
+            }
     }
     
     }
-    
+    }
     
 }
