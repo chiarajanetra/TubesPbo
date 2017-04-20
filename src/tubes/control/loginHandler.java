@@ -47,8 +47,7 @@ public class loginHandler implements ActionListener {
             }
             else{ JOptionPane.showMessageDialog(view,"Password Salah");
             view.resetPw();}
-        }
-       
+        }       
         }
     else if (click.equals(view.getBtnBatal())) {
             view.dispose();
