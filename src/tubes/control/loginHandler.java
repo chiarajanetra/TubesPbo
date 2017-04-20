@@ -36,16 +36,25 @@ public class loginHandler implements ActionListener {
     if (click.equals(view.getBtnLogin())){
         orang o = model.getOrang(view.getUsername());
         if (o == null){
-             JOptionPane.showMessageDialog(view, click"User Tidak Ditemukan");
+             JOptionPane.showMessageDialog(view,"User Tidak Ditemukan");
              view.resetAll();
         }
         else if (o!= null){
-            if( o.getPw().equals(view.getPw())){
-                
+            if( o.getPw().equals(view.getPw())){    
+                view.dispose();
             }
-    }
-    
-    }
+            else{ JOptionPane.showMessageDialog(view,"Password Salah");
+            view.resetPw();}
+        }
+        }
+    else if (click.equals(view.getBtnBatal())) {
+            view.dispose();
+            new menuHandler(model);
+        }
+    else if (click.equals(view.getBtnDaftar())) {
+            view.dispose();
+            new daftarHandler(model);
+        }
     }
     
 }

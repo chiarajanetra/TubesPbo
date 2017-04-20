@@ -141,6 +141,10 @@ public void addActionListener(ActionListener e ){
     this.btnDaftar.addActionListener(e);
     this.btnLogin.addActionListener(e);
 }
+public void resetAll(){
+    this.tfUser.setText("");
+    pfPassword.setText("");
+}
     
     public JButton getBtnDaftar() {
         return btnDaftar;

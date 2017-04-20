@@ -24,6 +24,10 @@ public class daftarGUI extends javax.swing.JFrame {
      */
     public daftarGUI() {
         initComponents();
+        tfNIP.setVisible(false);
+        tfKode.setVisible(false);
+        this.Kode.setVisible(false);
+        this.NIP.setVisible(false);
     }
 
     /**
@@ -272,8 +276,8 @@ this.cbStatus.addActionListener(e);
         return pfPassword;
     }
 
-    public JComboBox<String> getCbStatus() {
-        return cbStatus;
+    public String getCbStatus() {
+        return cbStatus.toString();
     }
 
     public String getNama(){

@@ -31,7 +31,7 @@ public class daftarHandler implements ActionListener{
        view.cekStatus();
        
        if (click.equals(view.getBtnDaftar())){
-             if (view.getCbStatus().equals("Dosen")){
+         if (view.getCbStatus().equals("Dosen")){
            String nama = view.getName();
            String pw = view.getPw();
            String user = view.getUsername();
@@ -43,8 +43,7 @@ public class daftarHandler implements ActionListener{
             JOptionPane.showMessageDialog(view, "Terdaftar");
             view.dispose();
            }
-           else 
-               if (view.getCbStatus().equals("Mahasiswa")){
+           else if (view.getCbStatus().equals("Mahasiswa")){
            String nama = view.getName();
            String pw = view.getPw();
            String user = view.getUsername();
@@ -52,6 +51,9 @@ public class daftarHandler implements ActionListener{
            model.addMahasiswa(nama, nip, user, pw);
            JOptionPane.showMessageDialog(view, "Terdaftar");
            view.dispose();
+           }
+           else if (view.getCbStatus().equals(".")) {
+               JOptionPane.showMessageDialog(view, "Pilih Status Terlebih dahulu");
            }
         }
     }
