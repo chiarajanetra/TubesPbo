@@ -5,6 +5,7 @@
  */
 package tubes.GUI;
 
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JList;
 import javax.swing.JTextField;
@@ -360,6 +361,16 @@ public class menuDosen extends javax.swing.JFrame {
 
     public JButton getBtnTambah4() {
         return btnTambah4;
+    }
+    
+    public void addActionListener(ActionListener e){
+       this. btnLogout.addActionListener(e);
+       this.btnRemove.addActionListener(e);
+       this.btnTambah1.addActionListener(e);
+       this.btnTambah2.addActionListener(e);
+       this.btnTambah3.addActionListener(e);
+       this.btnTambah4.addActionListener(e);
+            
     }
 
     public JList<String> getListKelas1() {
