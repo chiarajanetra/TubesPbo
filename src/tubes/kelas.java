@@ -28,11 +28,11 @@ public class kelas {
         this.mk = mk;
     } 
     
-public boolean isAdaTugas(String tugas){
+public ArrayList<tugas> getTugas(String tugas){
     for (tugas t : Tugas){
         if (t.getNt().equals(tugas))
-            return true;
-            break;
+            return t;
+           
     }
     return false;
     
@@ -68,7 +68,7 @@ public void createTugas(String tugas){
     }
     
     public void removeTugas(String tugas){
-        Tugas.remove(t.getNt().equals(tugas))
+        
     }
     
 public mahasiswa getMhsID(long id){
@@ -82,26 +82,23 @@ public mahasiswa getMhsID(long id){
 
 
 
-   public String showMahasiswa() {
+   public void showMahasiswa() {
    if (!anggota.isEmpty()){
        for (int i = 1; i <=anggota.size(); i++) {
-        return i + " . "+ anggota.toString();
+        anggota.toString();
        }
-    }
-   else{ 
-       return null;
+    
    }
    }
   
 
-   public String showTugas(){
-       for (int i = 0; i<=this.jmlTgs+1; i++){
-           if (jmlTgs >=1)
-           return i+" . "+ this.Tugas[i].toString();
-           else return "Tidak ada Tugas";
-       }
-       return null;
+   public void showTugas(){
+       for (tugas t : Tugas){
+            this.Tugas.toString();
+                }
+   
    }
+   
    public String toString(){
        return this.namaKelas + " - " + this.jmlMhs + " Orang. \n";
    }
