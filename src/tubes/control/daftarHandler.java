@@ -47,8 +47,8 @@ public class daftarHandler implements ActionListener{
            String nama = view.getName();
            String pw = view.getPw();
            String user = view.getUsername();
-           long nip = view.getNIP();  
-           model.addMahasiswa(nama, nip, user, pw);
+           long nim = view.getNIP();  
+           model.addMahasiswa(nama, nim, user, pw);
            JOptionPane.showMessageDialog(view, "Terdaftar");
            view.reset();
            }

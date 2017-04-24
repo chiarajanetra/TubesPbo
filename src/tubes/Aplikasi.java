@@ -23,6 +23,10 @@ public class Aplikasi {
     private orang user;
     
     
+    public void logout(){
+        this.user = null;
+    }
+    
     //function add
     
     public void addMatkul(String nama,int sks){

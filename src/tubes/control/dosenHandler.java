@@ -9,6 +9,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import tubes.Aplikasi;
 import tubes.GUI.menuDosen;
+import tubes.dosen;
+import tubes.orang;
 
 /**
  *
@@ -17,19 +19,30 @@ import tubes.GUI.menuDosen;
 public class dosenHandler implements ActionListener{
     Aplikasi model;
     menuDosen view;
+    dosen user;
     
-    public dosenHandler(Aplikasi model){
+    public dosenHandler(Aplikasi model,orang o){
         this.model = model;
         view = new menuDosen();
         view.setVisible(true);
         view.addActionListener(this);
-        
+        this.user = (dosen) o;
     }
+    
+    public void setListKelas(){
+        
+        
+      }
 
     @Override
     public void actionPerformed(ActionEvent e) {
             Object click = e.getSource();
             
+            if (click.equals(view.getBtnLogout())){
+                model.logout();
+                view.dispose();
+                new menuHandler(model);
+            }
             
                 
 
