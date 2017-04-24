@@ -3,16 +3,3 @@ lumayan banyak sih...
 
 
 tinggal ngegambar GUI nya yg di task kotak kedua(Gaje) 
-dsn
-   System.out.println("1. Tambah Kelas");
-     System.out.println("2. Hapus Kelas ");
-     System.out.println("3. Tambah Mata Kuliah");
-     System.out.println("4. Tambah Tugas");
-     System.out.println("5. Logout");
-mhs
-      System.out.println("1. Mendaftar Kelas");
-        System.out.println("2. Lihat Tugas");
-        System.out.println("3. Lihat Kelas");
-        System.out.println("4. Lihat Dosen");
-        System.out.println("5. Lihat Mata Kuliah");
-        System.out.println("6. Logout");
