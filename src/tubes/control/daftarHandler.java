@@ -28,10 +28,10 @@ public class daftarHandler implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
        Object click = e.getSource();
-       view.cekStatus();
+       view.rbcekStatus();
        
        if (click.equals(view.getBtnDaftar())){
-          if (!view.getKode().equals("")) {
+          if (view.getRbDosen().isEnabled()) {
            String nama = view.getName();
            String pw = view.getPw();
            String user = view.getUsername();
@@ -43,7 +43,7 @@ public class daftarHandler implements ActionListener{
             JOptionPane.showMessageDialog(view, "Terdaftar");
             view.reset();
              }
-          else {
+          else if (view.getRbMahasiswa().isEnabled()) {
            String nama = view.getName();
            String pw = view.getPw();
            String user = view.getUsername();
@@ -52,6 +52,10 @@ public class daftarHandler implements ActionListener{
            JOptionPane.showMessageDialog(view, "Terdaftar");
            view.reset();
            }
+          else {
+              JOptionPane.showMessageDialog(view, "Silahkan pilih status.");
+          } 
+           
             }
               else if (click.equals(view.getBtnBatal())) {
             view.dispose();

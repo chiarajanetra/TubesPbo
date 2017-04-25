@@ -41,6 +41,7 @@ public class daftarGUI extends javax.swing.JFrame {
 
         bgStatus = new javax.swing.ButtonGroup();
         status = new javax.swing.ButtonGroup();
+        Status = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -55,8 +56,10 @@ public class daftarGUI extends javax.swing.JFrame {
         tfNIP = new javax.swing.JTextField();
         btnDaftar = new javax.swing.JButton();
         btnBatal = new javax.swing.JButton();
-        cbStatus = new javax.swing.JComboBox<>();
+        rbDosen = new javax.swing.JRadioButton();
+        rbMahasiswa = new javax.swing.JRadioButton();
         jPanel2 = new javax.swing.JPanel();
+        cbStatus = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 51, 255));
@@ -87,7 +90,11 @@ public class daftarGUI extends javax.swing.JFrame {
 
         btnBatal.setText("Batal");
 
-        cbStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Dosen", "Mahasiswa" }));
+        Status.add(rbDosen);
+        rbDosen.setText("Dosen");
+
+        Status.add(rbMahasiswa);
+        rbMahasiswa.setText("Mahasiswa");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -99,22 +106,17 @@ public class daftarGUI extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(Kode)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel1)
-                                                .addGap(11, 11, 11))))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addGap(0, 0, Short.MAX_VALUE)))
-                                .addGap(21, 21, 21))
+                                .addGap(0, 2, Short.MAX_VALUE)
+                                .addComponent(jLabel1)
+                                .addGap(32, 32, 32))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(0, 38, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3)
-                                    .addComponent(jLabel4))
+                                    .addComponent(jLabel4)
+                                    .addComponent(Kode))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,8 +126,9 @@ public class daftarGUI extends javax.swing.JFrame {
                                     .addComponent(pfPassword, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
                                     .addComponent(tfUsername, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addComponent(tfNIP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(cbStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(16, 16, 16))
+                            .addComponent(rbDosen)
+                            .addComponent(rbMahasiswa))
+                        .addGap(10, 10, 10))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addComponent(btnBatal)
@@ -156,33 +159,43 @@ public class daftarGUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(cbStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rbMahasiswa))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rbDosen)
+                .addGap(7, 7, 7)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(NIP)
                     .addComponent(tfNIP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Kode)
-                    .addComponent(tfKode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfKode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Kode))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBatal)
                     .addComponent(btnDaftar))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(153, 0, 153));
+
+        cbStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Dosen", "Mahasiswa" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 174, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cbStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(cbStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -220,6 +233,30 @@ public class daftarGUI extends javax.swing.JFrame {
         this.pfPassword.setText("");
     }
     
+        
+    public void rbcekStatus(){
+        if (this.rbMahasiswa.isSelected()){
+              this.NIP.setVisible(true);
+            this.NIP.setText("NIM");
+            this.Kode.setVisible(false);
+            this.tfKode.setVisible(false);
+            this.tfNIP.setVisible(true);
+        }
+        else if (this.rbDosen.isSelected()){
+            this.NIP.setVisible(true);
+            this.NIP.setText("NIP");
+            this.Kode.setVisible(true);
+            this.tfKode.setVisible(true);
+            this.tfNIP.setVisible(true);
+        }
+        else {            
+            this.NIP.setVisible(false);
+            this.Kode.setVisible(false);
+            this.tfKode.setVisible(false);
+            this.tfNIP.setVisible(false);
+        }        
+    }
+    /*
     public void cekStatus(){
         if (this.cbStatus.getSelectedItem().equals(".")){
             this.NIP.setVisible(false);
@@ -241,14 +278,24 @@ public class daftarGUI extends javax.swing.JFrame {
             this.tfKode.setVisible(false);
             this.tfNIP.setVisible(true);
         }        
+    }*/
+
+    public JRadioButton getRbDosen() {
+        return rbDosen;
+    }
+
+    public JRadioButton getRbMahasiswa() {
+        return rbMahasiswa;
     }
     
     
+    
     public void addActionListener(ActionListener e){
-this.cbStatus.addActionListener(e);
+        this.cbStatus.addActionListener(e);
         this.btnBatal.addActionListener(e);
         this.btnDaftar.addActionListener(e);
-       
+        this.rbDosen.addActionListener(e);
+        this.rbMahasiswa.addActionListener(e);
     }
     
     public void setMahasiswa(){
@@ -304,6 +351,7 @@ public String getKode(){
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Kode;
     private javax.swing.JLabel NIP;
+    private javax.swing.ButtonGroup Status;
     private javax.swing.ButtonGroup bgStatus;
     private javax.swing.JButton btnBatal;
     private javax.swing.JButton btnDaftar;
@@ -315,6 +363,8 @@ public String getKode(){
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField pfPassword;
+    private javax.swing.JRadioButton rbDosen;
+    private javax.swing.JRadioButton rbMahasiswa;
     private javax.swing.ButtonGroup status;
     private javax.swing.JTextField tfKode;
     private javax.swing.JTextField tfNIP;
