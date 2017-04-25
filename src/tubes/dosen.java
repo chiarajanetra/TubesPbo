@@ -5,6 +5,8 @@
  */
 package tubes;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author march
@@ -12,20 +14,18 @@ package tubes;
 public class dosen extends orang {
     private String kd;//kode
     private long nip;
-    private kelas daftarkelas[] = new kelas[5];
+    private ArrayList<kelas> daftarkelas;
     private int listKelas= 0;
 
-   public dosen(String nama, String kd, long nip, String u, String pw) {
-      super(nama,u,pw);
+   public dosen(String nama, String kode, long nip, String user, String pw) {
+      super(nama,user,pw);
         this.nip = nip;
         this.kd = kd;
-        this.daftarkelas = new kelas[5];
     }
 
     public int getListKelas() {
-        return listKelas;
+        return daftarkelas.size();
     }
- 
     
 
     public String getKode() {
@@ -39,10 +39,9 @@ public class dosen extends orang {
 
     
     public void createKelas (String namaKelas){
-        this.listKelas++;
-        kelas k = new kelas(namaKelas);
-        this.daftarkelas[listKelas] = k;
-    }
+       
+        daftarkelas.add(new kelas(namaKelas));
+            }
     
     public kelas getKelas(String kelas){
         for (int i = 1; i<= this.listKelas; i++){
@@ -50,8 +49,11 @@ public class dosen extends orang {
                 return this.daftarkelas[i];
             }
         }
-        return null;
+        return 
+        
     }
+    
+    
     public kelas getKelasIdx(int x){
         return this.daftarkelas[x];
     }

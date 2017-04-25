@@ -11,8 +11,8 @@ import java.util.*;
  * @author MARCHIO
  */
 public class Aplikasi {
-    private ArrayList<orang> person;
-    
+ //   private ArrayList<orang> person1;
+    private Collection<orang> person;
     private ArrayList<mata_kuliah> daftarMatakuliah;
     private Scanner cin = new Scanner(System.in);
     private  int x = 0;
@@ -23,16 +23,23 @@ public class Aplikasi {
     private orang user;
     
     
+    public void logout(){
+        this.user = null;
+    }
+    
     //function add
     
     public void addMatkul(String nama,int sks){
        this.daftarMatakuliah.add(new mata_kuliah(nama,sks));
     }
-       public void addMahasiswa(String nama, long nim,String u,String pw){
-      this.person.add(new mahasiswa(nama,nim,u,pw)) ;
+       public void addMahasiswa(String nama, long nim,String user,String pw){
+      this.person.add(new mahasiswa(nama,nim,user,pw)) ;
     }
-    public void addDosen(String nama, String kd,long nip,String u, String pw){
-        this.person.add(new dosen(nama,kd,nip,u,pw));
+       
+    public void addDosen(String nama, String kd,long nip,String user, String pw){
+        dosen d = new dosen(nama,kd,nip,user,pw);
+        this.person.add(d);
+        
     }
     public void addKelas(String kelas,String kode){
        this.call= (dosen) getDosenKD(kode);

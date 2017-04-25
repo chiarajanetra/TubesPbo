@@ -37,10 +37,13 @@ public class loginHandler implements ActionListener {
     Object click = e.getSource();
     if (click.equals(view.getBtnLogin())){
           
+        
        
         if (model.isAda(view.getName())){
                 if(model.getUser().getPw().equals(view.getPw())  ){
+                    user = model.getOrang(view.getUsername());
                     view.dispose();
+                    new dosenHandler(model, user);
                     //menu mhs/dosen
                 }
                 else{ JOptionPane.showMessageDialog(view,"Password Salah");
