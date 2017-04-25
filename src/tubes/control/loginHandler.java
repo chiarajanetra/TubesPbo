@@ -19,7 +19,7 @@ import tubes.orang;
 public class loginHandler implements ActionListener {
     private Aplikasi model;
     private LoginGui view;
-    private orang user;
+   
 
     
     public loginHandler (Aplikasi model) {
@@ -36,24 +36,15 @@ public class loginHandler implements ActionListener {
         
     Object click = e.getSource();
     if (click.equals(view.getBtnLogin())){
-          
-        
-       
-        if (model.isAda(view.getName())){
-                if(model.getUser().getPw().equals(view.getPw())  ){
-                    user = model.getOrang(view.getUsername());
-                    view.dispose();
-                    new dosenHandler(model, user);
-                    //menu mhs/dosen
-                }
-                else{ JOptionPane.showMessageDialog(view,"Password Salah");
-                view.resetPw();}
-            }
-         else {
-            view.resetAll();
-            JOptionPane.showMessageDialog(view,"User Tidak Ditemukan");
-        } 
-    }
+        orang o = model.getOrang(view.getUsername(),view.getPw());
+       if (o!= null){
+           model.setUser(o);
+       }
+       else {
+           view.resetAll();
+           JOptionPane.showMessageDialog(view,"User Belum Terdaftar");
+       }
+    }    
        else if (click.equals(view.getBtnBatal())) {
             view.dispose();
             new menuHandler(model);

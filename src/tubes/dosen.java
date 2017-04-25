@@ -38,68 +38,48 @@ public class dosen extends orang {
     
 
     
-    public void createKelas (String namaKelas){
+    public void addsKelas (String namaKelas){
        
         daftarkelas.add(new kelas(namaKelas));
             }
     
     public kelas getKelas(String kelas){
-        for (int i = 1; i<= this.listKelas; i++){
-            if (this.daftarkelas[i].getNamaKelas() == kelas){
-                return this.daftarkelas[i];
+        for (kelas k : daftarkelas){
+            if (k.getNamaKelas().equals(kelas)){
+                return k;
             }
         }
-        return 
+        return null;
         
     }
     
     
     public kelas getKelasIdx(int x){
-        return this.daftarkelas[x];
+        return this.daftarkelas.get(x);
     }
     
-    public boolean removeKelas(String kelas){
-    for (int i = 1; i <= this.listKelas; i++){
-        if (this.daftarkelas[i].getNamaKelas() == kelas){//cek di data
-           for (int j = i; i< this.listKelas; i++){ // geser
-                if (j != this.listKelas){
-                    this.daftarkelas[j]=this.daftarkelas[j+1];
-                }
-                else{
-                    this.daftarkelas[j]=null;
-                }
-            }
-           return true;           
-                    }
-            
-    }
-    return false;
+    public void removeKelas(String kelas){
+            daftarkelas.remove(this.getKelas(kelas));
     }
     
     public void removeKelasIdx(int x){
-        if (x == this.listKelas){
-            this.daftarkelas[x]=null;
-        }
-        else {
-            for (int i = x; i<=this.listKelas; i++){
-                this.daftarkelas[x] = this.daftarkelas[x+1];
-            }
-            this.daftarkelas[listKelas]=null;
-        }
+        daftarkelas.remove(x);
+        
     }
     
     
     
     public String showKelas(){
-        for (int i =1 ; i<= this.listKelas; i++){
-            if (this.listKelas < 1 ){
-                return  "Kelas Kosong";
-            }
-            else {
-             return  i+" . "+this.daftarkelas[i].toString();}
-        }
-        return null;
+        String s = " ";
+        
+        for (int i =1; i <=daftarkelas.size(); i++) {
+            kelas k = daftarkelas.get(i);
+            
+             s +="Kelas "+ i + k + "\n";
+                }
+    return s;
     }
+    
     
     public String toString(){
         return "Nama : " + super.getNama() + " - "
@@ -113,12 +93,8 @@ public class dosen extends orang {
                 
     }
     
-    public boolean removeTugas(kelas k, String nama){
-        if (k.isAdaTugas(nama)){
-            if (k.removeTugas(nama));
-            return true;
-        }
-        return false;
+    public void removeTugas(kelas k, String nama){
+       k.removeTugas(nama);
     }
     
 

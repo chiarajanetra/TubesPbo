@@ -9,6 +9,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import tubes.Aplikasi;
 import tubes.GUI.daftarGUI;
+import tubes.dosen;
+import tubes.mahasiswa;
 
 
 public class daftarHandler implements ActionListener{
@@ -29,6 +31,9 @@ public class daftarHandler implements ActionListener{
     public void actionPerformed(ActionEvent e) {
        Object click = e.getSource();
        view.rbcekStatus();
+     
+       
+       
        
        if (click.equals(view.getBtnDaftar())){
           if (view.getRbDosen().isEnabled()) {
@@ -37,18 +42,20 @@ public class daftarHandler implements ActionListener{
            String user = view.getUsername();
            String kode = view.getKode();
            long nip = view.getNIP();
-           model.addDosen(nama, kode, nip, user, pw);
+           dosen d = new dosen(nama, kode, nip, user, pw);
+           model.addDosen(d);
            view.reset();
           // view.setMahasiswa();
             JOptionPane.showMessageDialog(view, "Terdaftar");
-            view.reset();
+           
              }
           else if (view.getRbMahasiswa().isEnabled()) {
            String nama = view.getName();
            String pw = view.getPw();
            String user = view.getUsername();
            long nim = view.getNIP();  
-           model.addMahasiswa(nama, nim, user, pw);
+           mahasiswa m = new mahasiswa(nama, nim, pw, pw);
+           model.addMahasiswa(m);
            JOptionPane.showMessageDialog(view, "Terdaftar");
            view.reset();
            }
