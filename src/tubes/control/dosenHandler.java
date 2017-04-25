@@ -21,12 +21,12 @@ public class dosenHandler implements ActionListener{
     menuDosen view;
     dosen user;
     
-    public dosenHandler(Aplikasi model,orang o){
+    public dosenHandler(Aplikasi model){
         this.model = model;
         view = new menuDosen();
         view.setVisible(true);
         view.addActionListener(this);
-        this.user = (dosen) o;
+        this.user = (dosen) model.getUser();
     }
     
     public void setListKelas(){
@@ -38,7 +38,7 @@ public class dosenHandler implements ActionListener{
     public void actionPerformed(ActionEvent e) {
             Object click = e.getSource();
             
-            if (click.equals(view.getBtnLogout())){
+            if (click.equals(view.getMenuLogout())){
                 model.logout();
                 view.dispose();
                 new menuHandler(model);

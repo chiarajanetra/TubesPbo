@@ -8,6 +8,7 @@ package tubes.GUI;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JList;
+import javax.swing.JMenuItem;
 import javax.swing.JTextField;
 
 /**
@@ -69,6 +70,10 @@ public class menuDosen extends javax.swing.JFrame {
         tfKuota = new javax.swing.JTextField();
         btnTambah1 = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        menuLogout = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
 
         jButton1.setText("jButton1");
 
@@ -336,6 +341,23 @@ public class menuDosen extends javax.swing.JFrame {
 
         btnLogout.setText("Logout");
 
+        jMenu1.setText("File");
+
+        menuLogout.setText("Logout");
+        menuLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuLogoutActionPerformed(evt);
+            }
+        });
+        jMenu1.add(menuLogout);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -363,6 +385,15 @@ public class menuDosen extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRemoveActionPerformed
 
+    private void menuLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuLogoutActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuLogoutActionPerformed
+
+    public JMenuItem getMenuLogout() {
+        return menuLogout;
+    }
+
+    
     public JButton getBtnLogout() {
         return btnLogout;
     }
@@ -394,7 +425,7 @@ public class menuDosen extends javax.swing.JFrame {
        this.btnTambah2.addActionListener(e);
        this.btnTambah3.addActionListener(e);
        this.btnTambah4.addActionListener(e);
-            
+       this.menuLogout.addActionListener(e);
     }
     
     
@@ -505,6 +536,9 @@ public class menuDosen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -520,6 +554,7 @@ public class menuDosen extends javax.swing.JFrame {
     private javax.swing.JList<String> listKelas3;
     private javax.swing.JList<String> listMatkul;
     private javax.swing.JTabbedPane menuDosenl;
+    private javax.swing.JMenuItem menuLogout;
     private javax.swing.JTextField tfKelas;
     private javax.swing.JTextField tfKuota;
     private javax.swing.JTextField tfMatkul;

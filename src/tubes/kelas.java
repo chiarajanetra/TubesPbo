@@ -28,14 +28,12 @@ public class kelas {
         this.mk = mk;
     } 
     
-public ArrayList<tugas> getTugas(String tugas){
+public tugas getTugas(String tugas){
     for (tugas t : Tugas){
         if (t.getNt().equals(tugas))
-            return t;
-           
+     return t;
     }
-    return false;
-    
+    return null;
 }
 
     public mata_kuliah getMk() {

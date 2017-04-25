@@ -6,6 +6,7 @@
 package tubes;
 
 import tubes.GUI.daftarGUI;
+import tubes.GUI.menuDosen;
 import tubes.control.daftarHandler;
 import tubes.control.loginHandler;
 import tubes.control.menuHandler;
@@ -25,7 +26,7 @@ public class main {
 //       mahasiswa m2 = new mahasiswa("Ander",1301154223,"Informatika");
 //       
        Aplikasi main = new Aplikasi();
-       new menuHandler(main);
+       new menuDosen();
        /*
        do{
        main.mainMenu();

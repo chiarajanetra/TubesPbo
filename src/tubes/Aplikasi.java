@@ -29,53 +29,52 @@ public class Aplikasi {
     
     //function add
     
-    public void addMatkul(String nama,int sks){
-       this.daftarMatakuliah.add(new mata_kuliah(nama,sks));
+    public void addMatkul(mata_kuliah m){
+       this.daftarMatakuliah.add(m);
     }
-       public void addMahasiswa(String nama, long nim,String user,String pw){
-      this.person.add(new mahasiswa(nama,nim,user,pw)) ;
-    }
+    
+       public void addMahasiswa(mahasiswa m){
+           this.person.add(m) ;
+      }
        
-    public void addDosen(String nama, String kd,long nip,String user, String pw){
-        dosen d = new dosen(nama,kd,nip,user,pw);
-        this.person.add(d);
-        
+    public void addDosen(dosen d){
+        this.person.add(d);        
     }
+    
     public void addKelas(String kelas,String kode){
-       this.call= (dosen) getDosenKD(kode);
+       dosen d = (dosen) getDosenKD(kode);
+       
     }
     
     
     //end function add
     //getter
     
-public orang getOrang(String user){
+public orang getOrang(String user, String pw){
     for (orang o : person) {
-        if (o.getUser().equals(user))
+        if (o.getUser().equals(user) && o.getPw().equals(pw))
             return o;
             }
     return null;
 }
+
+
 public orang getUser(){
     return this.user;
 }
-public void setUser(){
-    if (this.user instanceof mahasiswa) {
-        this.userM = (mahasiswa) this.user;
+
+public void setUser(orang or){
+    if (or instanceof dosen) {
+        this.userD = (dosen) or;
+        
     }
-    else {
-        this.userD = (dosen) this.user;
+    else  {
+        this.userM = (mahasiswa) or;
     }
 }
 
-public boolean isAda(String nama){
-    for (orang o : person) {
-        if (o.getNama().equals(o))
-           this.setUser(getOrang(nama));
-         return true;
-        }
-    return false;
-}
+
+
 
     public orang getNIMMahasiswa(long nim){//getMahasiswaByNimTerdaftar
         for (orang o : person){
@@ -108,6 +107,14 @@ public boolean isAda(String nama){
         }
         return null;
     }
+    public orang getOrang(String nama){
+        for (orang o : person) {
+            if (o.getNama().equals(nama)) {
+             return o;   
+            }
+        }
+        return null;
+    }
     
     public kelas getKelas(String nama){
         return userD.getKelas(nama);
@@ -119,7 +126,7 @@ public boolean isAda(String nama){
     
     
 public void deletePersonName(String nama){//deletePersonOnName
-            person.remove(this.getOrang(nama));
+       person.remove(this.getOrang(nama));
     }
     public void deleteDosen(String kd){
         person.remove(this.getDosenKD(kd));
@@ -141,9 +148,6 @@ public boolean isCorrect(String pw){
     return false;
 }
 
-public void setUser(orang o){
-    this.user = o;
-}
       
   
   public void ShowlistDosen(){//showListDosen
