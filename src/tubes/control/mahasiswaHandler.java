@@ -54,9 +54,7 @@ public class mahasiswaHandler implements ActionListener {
              kelas k = d.getKelas(view.getSelectKelas1());
              k.addMahasiswa(user);
             }
-            if (view.getListDosen().isShowing()) {
-                view.getListKelas().setModel( new DefaultComboBoxModel());
-            }
+          
     
         } catch (Exception ex) {
         }
