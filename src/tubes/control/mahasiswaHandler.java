@@ -7,6 +7,7 @@ package tubes.control;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.DefaultComboBoxModel;
 import tubes.Aplikasi;
 import tubes.GUI.LoginGui;
 import tubes.GUI.menuMahasiswa;
@@ -32,6 +33,7 @@ public class mahasiswaHandler implements ActionListener {
     }
    
     public void setList(){
+       view.getListDosen().setModel( new DefaultComboBoxModel(model.getListDosen().toArray()));
        
     }
 
@@ -51,6 +53,9 @@ public class mahasiswaHandler implements ActionListener {
              dosen d = (dosen)   model.getDosenKD(view.getSelectDosen());
              kelas k = d.getKelas(view.getSelectKelas1());
              k.addMahasiswa(user);
+            }
+            if (view.getListDosen().isShowing()) {
+                view.getListKelas().setModel( new DefaultComboBoxModel());
             }
     
         } catch (Exception ex) {

@@ -47,6 +47,16 @@ public class Aplikasi {
        
     }
     
+    public ArrayList<dosen> getListDosen(){
+       ArrayList<dosen> d = new ArrayList();
+        
+        for (orang o : person) {
+            if (o instanceof dosen) {
+                d.add( (dosen) o );
+            }
+        }
+        return d;
+    }
     
     //end function add
     //getter
