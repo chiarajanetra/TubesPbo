@@ -26,7 +26,7 @@ public class main {
 //       mahasiswa m2 = new mahasiswa("Ander",1301154223,"Informatika");
 //       
        Aplikasi main = new Aplikasi();
-       new menuDosen();
+       new menuHandler(main);
        /*
        do{
        main.mainMenu();

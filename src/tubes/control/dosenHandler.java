@@ -10,6 +10,8 @@ import java.awt.event.ActionListener;
 import tubes.Aplikasi;
 import tubes.GUI.menuDosen;
 import tubes.dosen;
+import tubes.kelas;
+import tubes.mata_kuliah;
 import tubes.orang;
 
 /**
@@ -17,7 +19,7 @@ import tubes.orang;
  * @author IDS CREW
  */
 public class dosenHandler implements ActionListener{
-    Aplikasi model;
+    public Aplikasi model;
     menuDosen view;
     dosen user;
     
@@ -37,12 +39,40 @@ public class dosenHandler implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
             Object click = e.getSource();
-            
-            if (click.equals(view.getMenuLogout())){
+            try {
+             if (click.equals(view.getMenuLogout())){
                 model.logout();
                 view.dispose();
                 new menuHandler(model);
             }
+            else if (click.equals(view.getBtnAddTugas())) {
+                String s = view.getTfNamaTugas();
+                kelas k = user.getKelas(view.getSelectKelas1());
+                user.addTugas(k, s);
+                }
+            else if (click.equals(view.getBtnTambahMatkul())) {
+                    kelas k = user.getKelas(view.getSelectKelas2());
+                    mata_kuliah m = model.getMatkul(view.getSelecttMatkul());
+                    k.addMataKuliah(m);
+                }
+            else if (click.equals(view.getBtnRegMatkul())) {
+                    String s = view.getTfMatkul().getText();
+                    model.addMatkul(new mata_kuliah(s, view.getIntSKS()));
+                   
+                }
+            else if (click.equals(view.getBtnRemove())) {
+                    String s = view.getSelectKelas3();
+                    user.removeKelas(s);
+                }
+            else if (click.equals(view.getBtnAddKelas())) {
+                    user.addKelas(view.getTfKelas());
+                }
+             
+        }
+            catch (Exception ex) {
+            
+        }
+           
             
                 
 

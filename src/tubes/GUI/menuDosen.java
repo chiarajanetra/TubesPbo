@@ -42,38 +42,36 @@ public class menuDosen extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         tfNamaTugas = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        btnTambah2 = new javax.swing.JButton();
+        addTugas = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         listMatkul = new javax.swing.JList<>();
         jScrollPane4 = new javax.swing.JScrollPane();
         listKelas2 = new javax.swing.JList<>();
-        btnTambah3 = new javax.swing.JButton();
+        tambahMatkul = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         tfMatkul = new javax.swing.JTextField();
-        btnTambah4 = new javax.swing.JButton();
+        regMatkul = new javax.swing.JButton();
+        sks = new javax.swing.JLabel();
+        intSKS = new javax.swing.JSpinner();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         listKelas3 = new javax.swing.JList<>();
-        btnRemove = new javax.swing.JButton();
+        removeKelas = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         tfKelas = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        tfKuota = new javax.swing.JTextField();
-        btnTambah1 = new javax.swing.JButton();
-        btnLogout = new javax.swing.JButton();
+        addKelas = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         menuLogout = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
 
         jButton1.setText("jButton1");
 
@@ -104,7 +102,7 @@ public class menuDosen extends javax.swing.JFrame {
 
         jLabel4.setText("Kelas");
 
-        btnTambah2.setText("Tambahkan");
+        addTugas.setText("Tambahkan");
 
         jButton4.setText("Refresh");
 
@@ -119,7 +117,7 @@ public class menuDosen extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnTambah2)
+                    .addComponent(addTugas)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
                     .addComponent(tfNamaTugas))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -139,7 +137,7 @@ public class menuDosen extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(jButton4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
-                .addComponent(btnTambah2)
+                .addComponent(addTugas)
                 .addGap(21, 21, 21))
         );
 
@@ -159,7 +157,7 @@ public class menuDosen extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(listKelas2);
 
-        btnTambah3.setText("Daftarkan");
+        tambahMatkul.setText("Daftarkan");
 
         jLabel5.setText("Kelas");
 
@@ -178,7 +176,7 @@ public class menuDosen extends javax.swing.JFrame {
                     .addComponent(jLabel6))
                 .addGap(34, 34, 34)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnTambah3)
+                    .addComponent(tambahMatkul)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
@@ -200,7 +198,7 @@ public class menuDosen extends javax.swing.JFrame {
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addGap(18, 18, 18)
-                .addComponent(btnTambah3)
+                .addComponent(tambahMatkul)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -208,7 +206,9 @@ public class menuDosen extends javax.swing.JFrame {
 
         jLabel7.setText("Nama Mata Kuliah ");
 
-        btnTambah4.setText("Tambahkan");
+        regMatkul.setText("Tambahkan");
+
+        sks.setText("SKS");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -217,13 +217,17 @@ public class menuDosen extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(jLabel7)
-                        .addGap(27, 27, 27)
-                        .addComponent(tfMatkul, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(111, 111, 111)
-                        .addComponent(btnTambah4)))
+                        .addComponent(regMatkul))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addComponent(sks))
+                        .addGap(27, 27, 27)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfMatkul, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(intSKS, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(63, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -233,8 +237,12 @@ public class menuDosen extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfMatkul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                .addComponent(btnTambah4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(sks)
+                    .addComponent(intSKS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addComponent(regMatkul)
                 .addGap(46, 46, 46))
         );
 
@@ -247,10 +255,10 @@ public class menuDosen extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(listKelas3);
 
-        btnRemove.setText("Remove");
-        btnRemove.addActionListener(new java.awt.event.ActionListener() {
+        removeKelas.setText("Remove");
+        removeKelas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRemoveActionPerformed(evt);
+                removeKelasActionPerformed(evt);
             }
         });
 
@@ -270,7 +278,7 @@ public class menuDosen extends javax.swing.JFrame {
                 .addGap(34, 34, 34)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton3)
-                    .addComponent(btnRemove))
+                    .addComponent(removeKelas))
                 .addGap(38, 38, 38))
         );
         jPanel2Layout.setVerticalGroup(
@@ -286,7 +294,7 @@ public class menuDosen extends javax.swing.JFrame {
                         .addGap(27, 27, 27)
                         .addComponent(jButton3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnRemove)))
+                        .addComponent(removeKelas)))
                 .addContainerGap(45, Short.MAX_VALUE))
         );
 
@@ -294,9 +302,7 @@ public class menuDosen extends javax.swing.JFrame {
 
         jLabel1.setText("Nama Kelas");
 
-        jLabel2.setText("Kuota Kelas");
-
-        btnTambah1.setText("Tambahkan");
+        addKelas.setText("Tambahkan");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -304,42 +310,28 @@ public class menuDosen extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(125, 125, 125)
-                .addComponent(btnTambah1)
+                .addComponent(addKelas)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
-                                .addComponent(tfKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(tfKuota, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(58, 58, 58)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addComponent(tfKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(77, 77, 77))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(56, Short.MAX_VALUE)
+                .addContainerGap(61, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfKelas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tfKuota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(35, 35, 35)
-                .addComponent(btnTambah1)
+                .addGap(68, 68, 68)
+                .addComponent(addKelas)
                 .addGap(35, 35, 35))
         );
 
         menuDosenl.addTab("Tambah Kelas", jPanel1);
-
-        btnLogout.setText("Logout");
 
         jMenu1.setText("File");
 
@@ -353,9 +345,6 @@ public class menuDosen extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
-
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -365,25 +354,20 @@ public class menuDosen extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(menuDosenl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnLogout)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(menuDosenl, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnLogout))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
+    private void removeKelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeKelasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnRemoveActionPerformed
+    }//GEN-LAST:event_removeKelasActionPerformed
 
     private void menuLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuLogoutActionPerformed
         // TODO add your handling code here:
@@ -393,44 +377,43 @@ public class menuDosen extends javax.swing.JFrame {
         return menuLogout;
     }
 
-    
-    public JButton getBtnLogout() {
-        return btnLogout;
-    }
-
     public JButton getBtnRemove() {
-        return btnRemove;
+        return removeKelas;
     }
 
-    public JButton getBtnTambah1() {
-        return btnTambah1;
+    public JButton getBtnAddKelas() {
+        return addKelas;
     }
 
-    public JButton getBtnTambah2() {
-        return btnTambah2;
+    public JButton getBtnAddTugas() {
+        return addTugas;
     }
 
-    public JButton getBtnTambah3() {
-        return btnTambah3;
+    public JButton getBtnTambahMatkul() {
+        return tambahMatkul;
     }
 
-    public JButton getBtnTambah4() {
-        return btnTambah4;
+    public JButton getBtnRegMatkul() {
+        return regMatkul;
     }
     
     public void addActionListener(ActionListener e){
-       this. btnLogout.addActionListener(e);
-       this.btnRemove.addActionListener(e);
-       this.btnTambah1.addActionListener(e);
-       this.btnTambah2.addActionListener(e);
-       this.btnTambah3.addActionListener(e);
-       this.btnTambah4.addActionListener(e);
+
+       this.removeKelas.addActionListener(e);
+       this.addKelas.addActionListener(e);
+       this.addTugas.addActionListener(e);
+       this.tambahMatkul.addActionListener(e);
+       this.regMatkul.addActionListener(e);
        this.menuLogout.addActionListener(e);
     }
     
     
     public String getSelectKelas1() {
         return listKelas1.getSelectedValue();
+    }
+
+    public int getIntSKS() {
+        return (int) intSKS.getValue();
     }
 
     public String getSelectKelas2() {
@@ -470,9 +453,6 @@ public class menuDosen extends javax.swing.JFrame {
         return tfKelas.getText();
     }
 
-    public Double getTfKuota() {
-        return Double.parseDouble(tfKuota.getText());
-    }
 
     public JTextField getTfMatkul() {
         return tfMatkul;
@@ -482,6 +462,7 @@ public class menuDosen extends javax.swing.JFrame {
         return tfNamaTugas.getText();
     }
 
+    
     /**
      * @param args the command line arguments
      */
@@ -518,18 +499,14 @@ public class menuDosen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnLogout;
-    private javax.swing.JButton btnRemove;
-    private javax.swing.JButton btnTambah1;
-    private javax.swing.JButton btnTambah2;
-    private javax.swing.JButton btnTambah3;
-    private javax.swing.JButton btnTambah4;
+    private javax.swing.JButton addKelas;
+    private javax.swing.JButton addTugas;
+    private javax.swing.JSpinner intSKS;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -537,7 +514,6 @@ public class menuDosen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -555,8 +531,11 @@ public class menuDosen extends javax.swing.JFrame {
     private javax.swing.JList<String> listMatkul;
     private javax.swing.JTabbedPane menuDosenl;
     private javax.swing.JMenuItem menuLogout;
+    private javax.swing.JButton regMatkul;
+    private javax.swing.JButton removeKelas;
+    private javax.swing.JLabel sks;
+    private javax.swing.JButton tambahMatkul;
     private javax.swing.JTextField tfKelas;
-    private javax.swing.JTextField tfKuota;
     private javax.swing.JTextField tfMatkul;
     private javax.swing.JTextField tfNamaTugas;
     // End of variables declaration//GEN-END:variables
