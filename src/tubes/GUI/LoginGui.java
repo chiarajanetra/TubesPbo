@@ -55,7 +55,7 @@ public class LoginGui extends javax.swing.JFrame {
             }
         });
 
-        btnBatal.setText("Batal");
+        btnBatal.setText("Kembali");
 
         jPanel2.setBackground(new java.awt.Color(204, 0, 255));
 
@@ -80,14 +80,14 @@ public class LoginGui extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
+                        .addContainerGap()
                         .addComponent(btnLogin)
                         .addGap(18, 18, 18)
                         .addComponent(btnDaftar)
                         .addGap(18, 18, 18)
                         .addComponent(btnBatal))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
+                        .addGap(29, 29, 29)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2))

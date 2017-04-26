@@ -12,8 +12,8 @@ import java.util.*;
  */
 public class Aplikasi {
  //   private ArrayList<orang> person1;
-    private Collection<orang> person;
-    private ArrayList<mata_kuliah> daftarMatakuliah;
+    private Collection<orang> person = new ArrayList();
+    private ArrayList<mata_kuliah> daftarMatakuliah = new ArrayList();
     private Scanner cin = new Scanner(System.in);
     private  int x = 0;
     private dosen call; //caller
@@ -21,6 +21,7 @@ public class Aplikasi {
     private dosen userD; //caller
     private mahasiswa userM; //caller                                     
     private orang user;
+
     
     
     public void logout(){

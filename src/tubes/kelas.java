@@ -13,19 +13,21 @@ import java.util.ArrayList;
  */
 public class kelas {
     private mata_kuliah mk;
-    private ArrayList<mahasiswa> anggota;
+    private ArrayList<mahasiswa> anggota = new ArrayList<>();
     private String namaKelas;
-    private ArrayList<tugas> Tugas;
+    private ArrayList<tugas> Tugas = new ArrayList();
     private int jmlMhs = 0; //jml mhs
     private int jmlTgs = 0; //jml tugas
     
     public kelas(String namaKelas){
         this.namaKelas = namaKelas;
-              
     }
+    
+   
 
     public void setMk(mata_kuliah mk) {
         this.mk = mk;
+       
     } 
     
 public tugas getTugas(String tugas){

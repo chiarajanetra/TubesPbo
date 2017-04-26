@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class dosen extends orang {
     private String kd;//kode
     private long nip;
-    private ArrayList<kelas> daftarkelas;
+    private ArrayList<kelas> daftarkelas = new ArrayList();
     private int listKelas= 0;
 
    public dosen(String nama, String kode, long nip, String user, String pw) {
@@ -38,7 +38,7 @@ public class dosen extends orang {
     
 
     
-    public void addsKelas (String namaKelas){
+    public void addKelas (String namaKelas){
        
         daftarkelas.add(new kelas(namaKelas));
             }
