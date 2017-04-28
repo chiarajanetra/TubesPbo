@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package tubes;
-import java.lang.reflect.Array;
 import java.util.*;
 /**
  *
@@ -34,8 +33,8 @@ public class Aplikasi {
        this.daftarMatakuliah.add(m);
     }
     
-       public void addMahasiswa(mahasiswa m){
-           this.person.add(m) ;
+    public void addMahasiswa(mahasiswa m){
+       this.person.add(m) ;
       }
        
     public void addDosen(dosen d){
@@ -56,6 +55,7 @@ public class Aplikasi {
             }
         }
         return d;
+    
     }
     
     //end function add
@@ -84,7 +84,27 @@ public void setUser(orang or){
     }
 }
 
+public  ArrayList<String> getNamaMatkul(){
+    ArrayList<String> nama = new ArrayList<>();
+    for (mata_kuliah m : daftarMatakuliah) {
+        String s = m.getNamaMatkul();
+        nama.add(s);
+    }
+    return nama;
+    
+}
 
+public ArrayList<String> getNamaDosen(){
+    ArrayList<String> nama = new ArrayList<>();
+    for (orang o : person){
+        if (o instanceof dosen) {
+            dosen d =(dosen) o;
+            String s = d.getKode();
+            nama.add(s);
+        }
+    }
+    return nama;
+}
 
 
     public orang getNIMMahasiswa(long nim){//getMahasiswaByNimTerdaftar

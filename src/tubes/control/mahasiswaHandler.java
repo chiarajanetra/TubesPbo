@@ -33,9 +33,8 @@ public class mahasiswaHandler implements ActionListener {
     }
    
     public void setList(){
-       view.getListDosen().setModel( new DefaultComboBoxModel(model.getListDosen().toArray()));
-       
-    }
+        view.setListDosen(model.getNamaDosen());
+         }
 
     
     

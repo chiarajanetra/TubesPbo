@@ -3,18 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/OGPlayaBoy/TubesPbo/src/tubes/GUI/menuMahasiswa.java</file>
-            <file>file:/D:/OGPlayaBoy/TubesPbo/src/tubes/kelas.java</file>
-            <file>file:/D:/OGPlayaBoy/TubesPbo/src/tubes/main.java</file>
-            <file>file:/D:/OGPlayaBoy/TubesPbo/src/tubes/GUI/daftarGUI.java</file>
-            <file>file:/D:/OGPlayaBoy/TubesPbo/src/tubes/GUI/menuDosen.java</file>
-            <file>file:/D:/OGPlayaBoy/TubesPbo/src/tubes/control/loginHandler.java</file>
-            <file>file:/D:/OGPlayaBoy/TubesPbo/src/tubes/GUI/menuGUI.java</file>
-            <file>file:/D:/OGPlayaBoy/TubesPbo/src/tubes/control/menuHandler.java</file>
-            <file>file:/D:/OGPlayaBoy/TubesPbo/src/tubes/dosen.java</file>
-            <file>file:/D:/OGPlayaBoy/TubesPbo/src/tubes/control/daftarHandler.java</file>
-            <file>file:/D:/OGPlayaBoy/TubesPbo/src/tubes/control/dosenHandler.java</file>
-            <file>file:/D:/OGPlayaBoy/TubesPbo/src/tubes/Aplikasi.java</file>
+            <file>file:/D:/Kulia/PBO(Pemorgaman%20Berorientasi%20Objek)/TubesPbo/src/tubes/GUI/menuDosen.java</file>
+            <file>file:/D:/Kulia/PBO(Pemorgaman%20Berorientasi%20Objek)/TubesPbo/src/tubes/mahasiswa.java</file>
+            <file>file:/D:/Kulia/PBO(Pemorgaman%20Berorientasi%20Objek)/TubesPbo/src/tubes/mata_kuliah.java</file>
+            <file>file:/D:/Kulia/PBO(Pemorgaman%20Berorientasi%20Objek)/TubesPbo/src/tubes/control/mahasiswaHandler.java</file>
+            <file>file:/D:/Kulia/PBO(Pemorgaman%20Berorientasi%20Objek)/TubesPbo/src/tubes/control/dosenHandler.java</file>
+            <file>file:/D:/Kulia/PBO(Pemorgaman%20Berorientasi%20Objek)/TubesPbo/src/tubes/kelas.java</file>
+            <file>file:/D:/Kulia/PBO(Pemorgaman%20Berorientasi%20Objek)/TubesPbo/src/tubes/dosen.java</file>
+            <file>file:/D:/Kulia/PBO(Pemorgaman%20Berorientasi%20Objek)/TubesPbo/src/tubes/Aplikasi.java</file>
+            <file>file:/D:/Kulia/PBO(Pemorgaman%20Berorientasi%20Objek)/TubesPbo/src/tubes/GUI/menuMahasiswa.java</file>
         </group>
     </open-files>
 </project-private>

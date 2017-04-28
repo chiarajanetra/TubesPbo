@@ -46,6 +46,9 @@ public tugas getTugas(String tugas){
         return namaKelas;
     }
 
+    public ArrayList<tugas> getListTugas(){
+        return this.Tugas;
+    }
 
 public void addMahasiswa(mahasiswa m){
  anggota.add(m);
@@ -68,7 +71,7 @@ public void createTugas(String tugas){
     }
     
     public void removeTugas(String tugas){
-        
+        Tugas.remove( this.getTugas(tugas));
     }
     
 public mahasiswa getMhsID(long id){
@@ -100,7 +103,7 @@ public mahasiswa getMhsID(long id){
    }
    
    public String toString(){
-       return this.namaKelas + " - " + this.jmlMhs + " Orang. \n";
+       return this.namaKelas + " - " + this.jmlMhs + " Orang. ";
    }
    
    

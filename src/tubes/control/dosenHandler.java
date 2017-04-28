@@ -7,6 +7,7 @@ package tubes.control;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.DefaultComboBoxModel;
 import tubes.Aplikasi;
 import tubes.GUI.menuDosen;
 import tubes.dosen;
@@ -32,9 +33,12 @@ public class dosenHandler implements ActionListener{
     }
     
     public void setListKelas(){
+        view.setListKelas1(user.getNamaKelas());
+        view.setListKelas3(user.getNamaKelas());
+        view.setListKelas2(user.getNamaKelas());
+        view.setMatkul(model.getNamaMatkul());
         
-        
-      }
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {

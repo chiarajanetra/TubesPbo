@@ -23,8 +23,17 @@ public class dosen extends orang {
         this.kd = kd;
     }
 
-    public int getListKelas() {
-        return daftarkelas.size();
+    public ArrayList<kelas> getListKelas() {
+     return daftarkelas;
+        }
+    
+    public ArrayList<String> getNamaKelas(){
+        ArrayList<String> nama = new ArrayList<>();
+        for (kelas k : daftarkelas) {
+            String n = k.getNamaKelas();
+            nama.add(n);
+        }
+        return nama;       
     }
     
 
@@ -82,7 +91,7 @@ public class dosen extends orang {
     
     
     public String toString(){
-        return "Nama : " + super.getNama() + " - "
+        return  super.getNama() + " - "
                 + this.kd + " - ";
     }
     
@@ -96,6 +105,10 @@ public class dosen extends orang {
     public void removeTugas(kelas k, String nama){
        k.removeTugas(nama);
     }
+    
+
+
+    
     
 
 }
