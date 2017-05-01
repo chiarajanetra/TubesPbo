@@ -13,15 +13,12 @@ public class Aplikasi {
  //   private ArrayList<orang> person1;
     private Collection<orang> person = new ArrayList();
     private ArrayList<mata_kuliah> daftarMatakuliah = new ArrayList();
-    private Scanner cin = new Scanner(System.in);
     private  int x = 0;
     private dosen call; //caller
     private mahasiswa call1; //caller
     private dosen userD; //caller
     private mahasiswa userM; //caller                                     
     private orang user;
-
-    
     
     public void logout(){
         this.user = null;
@@ -47,7 +44,7 @@ public class Aplikasi {
     }
     
     public ArrayList<dosen> getListDosen(){
-       ArrayList<dosen> d = new ArrayList();
+        ArrayList<dosen> d = new ArrayList();
         
         for (orang o : person) {
             if (o instanceof dosen) {
@@ -61,49 +58,48 @@ public class Aplikasi {
     //end function add
     //getter
     
-public orang getOrang(String user, String pw){
-    for (orang o : person) {
-        if (o.getUser().equals(user) && o.getPw().equals(pw))
-            return o;
+    public orang getOrang(String user, String pw){
+        for (orang o : person) {
+            if (o.getUser().equals(user) && o.getPw().equals(pw))
+                return o;
             }
-    return null;
-}
+        return null;
+    }
 
 
-public orang getUser(){
-    return this.user;
-}
+    public orang getUser(){
+        return this.user;
+    }
 
-public void setUser(orang or){
-    if (or instanceof dosen) {
-        this.userD = (dosen) or;
+    public void setUser(orang or){
+        if (or instanceof dosen) {
+            this.userD = (dosen) or;
         
-    }
-    else  {
-        this.userM = (mahasiswa) or;
-    }
-}
-
-public  ArrayList<String> getNamaMatkul(){
-    ArrayList<String> nama = new ArrayList<>();
-    for (mata_kuliah m : daftarMatakuliah) {
-        String s = m.getNamaMatkul();
-        nama.add(s);
-    }
-    return nama;
-    
-}
-
-public ArrayList<String> getNamaDosen(){
-    ArrayList<String> nama = new ArrayList<>();
-    for (orang o : person){
-        if (o instanceof dosen) {
-            dosen d =(dosen) o;
-            String s = d.getKode();
-            nama.add(s);
+        } else {
+            this.userM = (mahasiswa) or;
         }
     }
-    return nama;
+
+    public  ArrayList<String> getNamaMatkul(){
+        ArrayList<String> nama = new ArrayList<>();
+        for (mata_kuliah m : daftarMatakuliah) {
+            String s = m.getNamaMatkul();
+            nama.add(s);
+        }
+        return nama;
+    
+    }
+
+    public ArrayList<String> getNamaDosen(){
+        ArrayList<String> nama = new ArrayList<>();
+        for (orang o : person){
+            if (o instanceof dosen) {
+                dosen d =(dosen) o;
+                String s = d.getKode();
+                nama.add(s);
+            }
+        }
+        return nama;
 }
 
 
@@ -114,10 +110,10 @@ public ArrayList<String> getNamaDosen(){
                     if (this.call1.getNim() == nim){
                        return o;
                     }
-    }
+            }
         }
         return null;
-}
+    }
     
     public orang getDosenKD(String kd){
           for (orang o : person){
@@ -129,7 +125,8 @@ public ArrayList<String> getNamaDosen(){
            }
         }
         return null;
-    }    
+    }  
+    
     public mata_kuliah getMatkul(String nama){//getMatkulByName
         for (mata_kuliah o : daftarMatakuliah){
             if (o.getNamaMatkul().equals(nama)){
@@ -138,6 +135,7 @@ public ArrayList<String> getNamaDosen(){
         }
         return null;
     }
+    
     public orang getOrang(String nama){
         for (orang o : person) {
             if (o.getNama().equals(nama)) {
@@ -156,32 +154,35 @@ public ArrayList<String> getNamaDosen(){
     //delete
     
     
-public void deletePersonName(String nama){//deletePersonOnName
+    public void deletePersonName(String nama){//deletePersonOnName
        person.remove(this.getOrang(nama));
     }
+    
     public void deleteDosen(String kd){
         person.remove(this.getDosenKD(kd));
     }
+    
     public void deleteMahasiswa(long nim){
         person.remove(this.getNIMMahasiswa(nim));
         
     }
+    
     public void deleteMatkul(String nama){
         person.remove(this.getMatkul(nama));
     }
     //end Delete1
     
-public boolean isCorrect(String pw){
-    for (orang o : person){
-        if (o.getPw().equals(pw))
-            return true;
+    public boolean isCorrect(String pw){
+        for (orang o : person){
+            if (o.getPw().equals(pw))
+                return true;
+        }
+        return false;
     }
-    return false;
-}
 
       
   
-  public void ShowlistDosen(){//showListDosen
+    public void ShowlistDosen(){//showListDosen
         for (orang o : person){
             if (o instanceof dosen){
                 this.call = (dosen) o;
@@ -191,15 +192,14 @@ public boolean isCorrect(String pw){
     }
   
   //show list 
-      public void listMahasiswa(dosen D,String kelas){
-          D.getKelas(kelas).showMahasiswa();
-      }
-       public void ShowlistMatkul(){//showListMatkulTerdaftar
+    public void listMahasiswa(dosen D,String kelas){
+        D.getKelas(kelas).showMahasiswa();
+    }
+    
+    public void ShowlistMatkul(){//showListMatkulTerdaftar
         for (mata_kuliah o :daftarMatakuliah){
            o.toString();
         }
-    }
-         
-    
+    } 
     
 }

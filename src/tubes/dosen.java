@@ -16,6 +16,7 @@ public class dosen extends orang {
     private long nip;
     private ArrayList<kelas> daftarkelas = new ArrayList();
     private int listKelas= 0;
+   
 
    public dosen(String nama, String kode, long nip, String user, String pw) {
       super(nama,user,pw);
@@ -24,14 +25,15 @@ public class dosen extends orang {
     }
 
     public ArrayList<kelas> getListKelas() {
-     return daftarkelas;
-        }
+        return daftarkelas;
+    }
     
     public ArrayList<String> getNamaKelas(){
         ArrayList<String> nama = new ArrayList<>();
         for (kelas k : daftarkelas) {
-            String n = k.getNamaKelas();
-            nama.add(n);
+//            String n = k.getNamaKelas();
+//            nama.add(n);
+              nama.add(k.getNamaKelas());
         }
         return nama;       
     }
@@ -44,13 +46,10 @@ public class dosen extends orang {
     public long getNip() {
         return nip;
     }
-    
 
-    
     public void addKelas (String namaKelas){
-       
         daftarkelas.add(new kelas(namaKelas));
-            }
+    }
     
     public kelas getKelas(String kelas){
         for (kelas k : daftarkelas){
@@ -76,40 +75,30 @@ public class dosen extends orang {
         
     }
     
-    
-    
-    public String showKelas(){
-        String s = " ";
-        
-        for (int i =1; i <=daftarkelas.size(); i++) {
-            kelas k = daftarkelas.get(i);
-            
-             s +="Kelas "+ i + k + "\n";
-                }
-    return s;
-    }
+//    public String showKelas(){
+//        String s = " ";
+//        
+//        for (int i =1; i <=daftarkelas.size(); i++) {
+//            kelas k = daftarkelas.get(i);
+//            
+//             s +="Kelas "+ i + k + "\n";
+//         }
+//        return s;
+//    }
     
     
     public String toString(){
         return  super.getNama() + " - "
                 + this.kd + " - ";
     }
-    
-    
-    public void addTugas(kelas k,String nama){
-        
-        k.createTugas(nama);
-                
-    }
-    
-    public void removeTugas(kelas k, String nama){
-       k.removeTugas(nama);
-    }
-    
 
-
+//    public void addTugas(kelas k,String nama){ 
+//        k.createTugas(nama);         
+//    }
     
-    
+//    public void removeTugas(kelas k, String nama){
+//       k.removeTugas(nama);
+//    }
 
 }
 

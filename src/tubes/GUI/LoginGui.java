@@ -136,15 +136,17 @@ public class LoginGui extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnLoginActionPerformed
-public void addActionListener(ActionListener e ){
-    this.btnBatal.addActionListener(e);
-    this.btnDaftar.addActionListener(e);
-    this.btnLogin.addActionListener(e);
-}
-public void resetAll(){
-    this.tfUser.setText("");
-    pfPassword.setText("");
-}
+    
+    public void addActionListener(ActionListener e ){
+        this.btnBatal.addActionListener(e);
+        this.btnDaftar.addActionListener(e);
+        this.btnLogin.addActionListener(e);
+    }
+    
+    public void resetAll(){
+        this.tfUser.setText("");
+        pfPassword.setText("");
+    }
     
     public JButton getBtnDaftar() {
         return btnDaftar;
@@ -161,12 +163,14 @@ public void resetAll(){
     public String getPw(){
         return String.copyValueOf(this.pfPassword.getPassword());
     }
+    
     public String getUsername(){
         return this.tfUser.getText();
     }
-public void resetPw(){
-    this.pfPassword.setText("");
-}
+    
+    public void resetPw(){
+        this.pfPassword.setText("");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBatal;

@@ -22,21 +22,18 @@ public class kelas {
     public kelas(String namaKelas){
         this.namaKelas = namaKelas;
     }
-    
-   
 
     public void setMk(mata_kuliah mk) {
-        this.mk = mk;
-       
+        this.mk = mk;    
     } 
     
-public tugas getTugas(String tugas){
-    for (tugas t : Tugas){
-        if (t.getNt().equals(tugas))
-     return t;
+    public tugas getTugas(String tugas){
+        for (tugas t : Tugas){
+            if (t.getNt().equals(tugas))
+            return t;
+        }
+        return null;
     }
-    return null;
-}
 
     public mata_kuliah getMk() {
         return mk;
@@ -50,17 +47,17 @@ public tugas getTugas(String tugas){
         return this.Tugas;
     }
 
-public void addMahasiswa(mahasiswa m){
- anggota.add(m);
-}
+    public void addMahasiswa(mahasiswa m){
+        anggota.add(m);
+    }
 
-public void addMataKuliah(mata_kuliah mkl){
-    mk = mkl;
- }
+    public void addMataKuliah(mata_kuliah mkl){
+        mk = mkl;
+    }
 
-public void createTugas(String tugas){
-    Tugas.add(new tugas(tugas));
-}
+    public void createTugas(String tugas){
+        Tugas.add(new tugas(tugas));
+    }
 
     public int getJml() {
         return anggota.size();
@@ -74,34 +71,30 @@ public void createTugas(String tugas){
         Tugas.remove( this.getTugas(tugas));
     }
     
-public mahasiswa getMhsID(long id){
-    for (mahasiswa m : anggota){
-        if (m.getNim() == id) {
-            return m;
+    public mahasiswa getMhsID(long id){
+        for (mahasiswa m : anggota){
+            if (m.getNim() == id) {
+                return m;
+            }
+        }    
+        return null;
+    }
+
+    public void showMahasiswa() {
+        if (!anggota.isEmpty()){
+            for (int i = 1; i <=anggota.size(); i++) {
+            anggota.toString();
+            }
         }
-    }    
-    return null;
-}
-
-
-
-   public void showMahasiswa() {
-   if (!anggota.isEmpty()){
-       for (int i = 1; i <=anggota.size(); i++) {
-        anggota.toString();
-       }
+   }
     
-   }
-   }
-  
-
-   public void showTugas(){
-       for (tugas t : Tugas){
+    public void showTugas(){
+        for (tugas t : Tugas){
             this.Tugas.toString();
-                }
-   
+        }
    }
    
+    @Override
    public String toString(){
        return this.namaKelas + " - " + this.jmlMhs + " Orang. ";
    }

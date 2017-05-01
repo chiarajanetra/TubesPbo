@@ -59,7 +59,7 @@ public class daftarGUI extends javax.swing.JFrame {
         rbDosen = new javax.swing.JRadioButton();
         rbMahasiswa = new javax.swing.JRadioButton();
         jPanel2 = new javax.swing.JPanel();
-        cbStatus = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 51, 255));
@@ -106,17 +106,14 @@ public class daftarGUI extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 2, Short.MAX_VALUE)
-                                .addComponent(jLabel1)
-                                .addGap(32, 32, 32))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(0, 38, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3)
                                     .addComponent(jLabel4)
-                                    .addComponent(Kode))
+                                    .addComponent(Kode)
+                                    .addComponent(jLabel1))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,7 +176,8 @@ public class daftarGUI extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(153, 0, 153));
 
-        cbStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Dosen", "Mahasiswa" }));
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel5.setText("Daftar");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -187,14 +185,14 @@ public class daftarGUI extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(cbStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addComponent(jLabel5)
+                .addContainerGap(98, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(cbStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(jLabel5)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -236,7 +234,7 @@ public class daftarGUI extends javax.swing.JFrame {
         
     public void rbcekStatus(){
         if (this.rbMahasiswa.isSelected()){
-              this.NIP.setVisible(true);
+            this.NIP.setVisible(true);
             this.NIP.setText("NIM");
             this.Kode.setVisible(false);
             this.tfKode.setVisible(false);
@@ -291,7 +289,7 @@ public class daftarGUI extends javax.swing.JFrame {
     
     
     public void addActionListener(ActionListener e){
-        this.cbStatus.addActionListener(e);
+        //this.cbStatus.addActionListener(e);
         this.btnBatal.addActionListener(e);
         this.btnDaftar.addActionListener(e);
         this.rbDosen.addActionListener(e);
@@ -303,6 +301,7 @@ public class daftarGUI extends javax.swing.JFrame {
         this.Kode.setVisible(false);
         this.tfKode.setVisible(false);
     }
+    
     public void setDosen(){
         this.NIP.setText("NIP");
         this.Kode.setVisible(true);
@@ -323,9 +322,9 @@ public class daftarGUI extends javax.swing.JFrame {
         return pfPassword;
     }
 
-    public String getCbStatus() {
-        return cbStatus.toString();
-    }
+//    public String getCbStatus() {
+//        return cbStatus.toString();
+//    }
 
     public String getNama(){
         return this.tfName.getText();
@@ -334,16 +333,17 @@ public class daftarGUI extends javax.swing.JFrame {
         return String.copyValueOf(this.pfPassword.getPassword());
     }
     
-public String getUsername(){
-   return this.tfUsername.getText();
-}
+    public String getUsername(){
+        return this.tfUsername.getText();
+    }
 
-public long getNIP(){
-    return Long.parseLong(this.tfNIP.getText());
-}
-public String getKode(){
-    return this.tfKode.getText();
-}
+    public long getNIP(){
+        return Long.parseLong(this.tfNIP.getText());
+    }
+    
+    public String getKode(){
+        return this.tfKode.getText();
+    }
 
     
     
@@ -355,11 +355,11 @@ public String getKode(){
     private javax.swing.ButtonGroup bgStatus;
     private javax.swing.JButton btnBatal;
     private javax.swing.JButton btnDaftar;
-    private javax.swing.JComboBox<String> cbStatus;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField pfPassword;

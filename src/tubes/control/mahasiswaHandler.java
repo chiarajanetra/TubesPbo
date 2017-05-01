@@ -33,9 +33,13 @@ public class mahasiswaHandler implements ActionListener {
     }
    
     public void setList(){
-        view.setListDosen(model.getNamaDosen());
+        view.setListDosen(model.getKodeDosen());
+        
          }
-
+public void setKelas(dosen d){
+    view.getListKelas1().setModel(new DefaultComboBoxModel<>(d.getNamaKelas().toArray()));
+    
+}
     
     
     @Override
@@ -49,9 +53,19 @@ public class mahasiswaHandler implements ActionListener {
             }
             else   if (click.equals(view.getBtnEnroll())) {
                 
-             dosen d = (dosen)   model.getDosenKD(view.getSelectDosen());
+          
+                if (view.getListDosen().isShowing()) {
+                       dosen d = (dosen) model.getDosenKD((String) view.getListDosen().getSelectedItem());
+                       view.getListKelas1().setModel(new DefaultComboBoxModel<>(d.getNamaKelas().toArray() ));
+                }
+             
+             
+             
+             
              kelas k = d.getKelas(view.getSelectKelas1());
              k.addMahasiswa(user);
+             
+             
             }
           
     

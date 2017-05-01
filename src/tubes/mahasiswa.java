@@ -11,12 +11,9 @@ package tubes;
  */
 public class mahasiswa extends orang {
     private long nim; //nim
-    
-
 
     public mahasiswa(String nama, long nim, String u, String pw) {
        super(nama,u,pw);
-    
         this.nim = nim;
     }
     
